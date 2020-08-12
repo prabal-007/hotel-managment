@@ -30,7 +30,7 @@ for item in vegItems:
     frames[count] = Frame(minifrm1)
     if count == 0:
         Label(frames[count],text='VEGETARIAN',  bg='orange',font='arial 8 bold').pack(pady=2,fill=X)
-    radio =Radiobutton(frames[count],text=item, variable=staVar, value=item,padx='5').pack(padx=5,side=LEFT)
+    radio =Checkbutton(frames[count],text=item, variable=staVar,padx='5').pack(padx=5,side=LEFT)
     lenVer1 = Spinbox(frames[count], from_=0, to_=23, width=5, relief=SUNKEN)
     lenVer1.pack(side=LEFT,padx=10)
     rvar = IntVar()
@@ -48,7 +48,7 @@ for item in breads:
         Label(frames[count],text='Indian Breads',  bg='orange',font='arial 8 bold').pack(pady=2,fill=X)
     if count == 6:
         Label(frames[count],text='Tava Special',  fg='Green',font='arial 8 bold').pack(pady=2,fill=X)
-    radio =Radiobutton(frames[count],text=item, variable=staVar, value=item,padx='5').pack(padx=5,side=LEFT)
+    radio =Checkbutton(frames[count],text=item, variable=staVar, padx='5').pack(padx=5,side=LEFT)
     lenVer1 = Spinbox(frames[count], from_=0, to_=23, width=5, relief=SUNKEN)
     lenVer1.pack(side=LEFT,padx=10)
     rvar = IntVar()
@@ -65,7 +65,7 @@ for item in southIndian:
         Label(frames[count],text='South Indian',  bg='orange',font='arial 8 bold').pack(pady=2,fill=X)
     if count == 6:
         Label(frames[count],text='Rice',  bg='Orange',font='arial 8 bold').pack(pady=2,fill=X)
-    radio =Radiobutton(frames[count],text=item, variable=staVar, value=item,padx='5').pack(padx=5,side=LEFT)
+    radio = Checkbutton(frames[count],text=item, variable=staVar, padx='5').pack(padx=5,side=LEFT)
     lenVer1 = Spinbox(frames[count], from_=0, to_=23, width=5, relief=SUNKEN)
     lenVer1.pack(side=LEFT,padx=10)
     rvar = IntVar()
@@ -80,6 +80,7 @@ mainfrm.pack(pady=2,padx=1)
 bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
 Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
 Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
+Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
 # /////////////////////////////////////////////////////////////////////////
@@ -94,8 +95,8 @@ screen = Text(sidefrm, font='lucida 14 bold', yscrollcommand=scroll.set,state=DI
 screen.pack(fill=Y,expand=TRUE, padx=5, pady='10')
 scroll.config(command=screen.yview)
 payfrm = Frame(sidefrm,relief=FLAT, border='8',background='red')
-Button(payfrm,text='Pay', font='arial 15 bold',relief=SUNKEN, command=NONE,padx=5).pack(padx=10,pady=5)
-Button(payfrm,text='Cancel ORDER', font='arial 10 bold',relief=SUNKEN, command=NONE).pack(padx=10)
+Button(payfrm,text='Pay Now', font='arial 15 bold',relief=SUNKEN, command=NONE,padx=5).pack(padx=10,pady=5)
+Button(payfrm,text='Add More', font='arial 10 bold',relief=SUNKEN, command=NONE).pack(padx=10,pady=5)
 payfrm.pack(side=BOTTOM)
 
 sidefrm.pack(pady=2,padx=1,side=RIGHT,anchor='n')
