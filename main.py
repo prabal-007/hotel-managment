@@ -11,16 +11,16 @@ frm1.pack(side=TOP, fill=X)
 mainfrm = Frame(relief=SUNKEN, border='8',background='red')
 staVar=StringVar()
 
-minifrm1 = Frame(mainfrm,relief=SUNKEN,border=5)
-
 # frame for Vegetarial items - minifrm1
+
+rvar = IntVar()
+minifrm1 = Frame(mainfrm,relief=SUNKEN,border=5)
 
 f1 = Frame(minifrm1)
 Label(f1,text='VEGETARIAN', bg='orange',font='arial 8 bold').pack(pady=2,fill=X)
 radio =Radiobutton(f1,text='Roti', variable=staVar, value='Roti',padx='5').pack(padx=5,side=LEFT)
 lenVer1 = Spinbox(f1, from_=3, to_=23, width=5, relief=SUNKEN)
 lenVer1.pack(side=LEFT,padx=10)
-rvar = IntVar()
 Entry(f1,textvariable=rvar,font='10',width='4').pack()
 f1.pack(padx=5,pady=2)
 f2 = Frame(minifrm1)
