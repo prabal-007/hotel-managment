@@ -2,15 +2,19 @@ from tkinter import *
 
 root = Tk()
 root.title('Hotel Management')
-root.geometry('900x800')
-root.configure(background='red')
+root.geometry('1000x800')
+root.configure(background='Gold')
 frm1 = Frame(bg='red')
-Label(frm1,text='Hotel Management', font='arial 25 bold', padx='15', pady='5', bg='red', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
+Label(frm1,text='Hotel Management SYSTEM', font='arial 25 bold', padx='15', pady='5', bg='gold', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
 frm1.pack(side=TOP, fill=X)
 
-rightfrm = Frame(root)
+# /////////////////////////////////////////////////////////////////////////////
+
+rightfrm = Frame(root,bg='gold')
 mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
+Label(mainfrm,text='MENU',font='arial 20 bold',padx='5').pack()
 staVar=StringVar()
+staVar.set('Roti')
 
 # frame for Vegetarial items - minifrm1
 vegItems = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo',
@@ -18,6 +22,7 @@ vegItems = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo
 breads = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer']
 southIndian = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal']
 frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','f15','f16']
+
 
 minifrm1 = Frame(mainfrm,relief=SUNKEN,border=5)
 count = 0
@@ -32,12 +37,10 @@ for item in vegItems:
     Entry(frames[count],textvariable=rvar,font='10',width='4').pack()
     frames[count].pack(padx=5,pady=2)
     count += 1
-
 minifrm1.pack(side=LEFT,padx=5,pady=5,fill=Y)   
 
                     # frame for Indian breads column - minifrm2
 minifrm2 = Frame(mainfrm,relief=SUNKEN,border='5')
-
 count = 0
 for item in breads:
     frames[count] = Frame(minifrm2)
@@ -52,7 +55,6 @@ for item in breads:
     Entry(frames[count],textvariable=rvar,font='10',width='4').pack()
     frames[count].pack(padx=5,pady=2)
     count += 1
-    
 minifrm2.pack(padx=5,pady=5,anchor='n',side=LEFT)
 
 minifrm3 = Frame(mainfrm,relief=SUNKEN,border='5')
@@ -73,14 +75,30 @@ for item in southIndian:
 minifrm3.pack(padx=5,pady=5,anchor='e')
 
 mainfrm.pack(pady=2,padx=1)
+# ///////////////////////////////////////////////////////////////////////////////////
+
 bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
-Button(bottomfrm,text='BACK', font='arial 20 bold', command=NONE).pack(padx=10,side=LEFT)
-Button(bottomfrm,text='SUBMIT ORDER', font='arial 20 bold', command=NONE).pack(padx=10,side=RIGHT)
+Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
+Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
+# /////////////////////////////////////////////////////////////////////////
 sidefrm = Frame(root,bg='red')
+Label(sidefrm,text='Order Details', font='arial 15 bold',width=8,padx=5).pack(padx=5,fill=X)
 var = StringVar()
-screen = Entry(sidefrm,textvariable=var, font='lucida 18 bold').pack(fill=Y,padx=5, pady='10')
+scroll = Scrollbar(sidefrm)
+scroll.pack(fill=Y,side=RIGHT,pady=10)
+var.set('Item  Qty  Price\n ')
+
+screen = Text(sidefrm, font='lucida 14 bold', yscrollcommand=scroll.set,state=DISABLED)
+screen.pack(fill=Y,expand=TRUE, padx=5, pady='10')
+scroll.config(command=screen.yview)
+payfrm = Frame(sidefrm,relief=FLAT, border='8',background='red')
+Button(payfrm,text='Pay', font='arial 15 bold',relief=SUNKEN, command=NONE,padx=5).pack(padx=10,pady=5)
+Button(payfrm,text='Cancel ORDER', font='arial 10 bold',relief=SUNKEN, command=NONE).pack(padx=10)
+payfrm.pack(side=BOTTOM)
+
 sidefrm.pack(pady=2,padx=1,side=RIGHT,anchor='n')
+# /////////////////////////////////////////////
 
 root.mainloop()
