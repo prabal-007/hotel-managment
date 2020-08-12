@@ -2,22 +2,24 @@ from tkinter import *
 
 root = Tk()
 root.title('Hotel Management')
-root.geometry('700x600')
+root.geometry('900x800')
 root.configure(background='red')
 frm1 = Frame(bg='red')
 Label(frm1,text='Hotel Management', font='arial 25 bold', padx='15', pady='5', bg='red', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
 frm1.pack(side=TOP, fill=X)
 
-mainfrm = Frame(relief=SUNKEN, border='8',background='red')
+rightfrm = Frame(root)
+mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
 staVar=StringVar()
 
 # frame for Vegetarial items - minifrm1
 vegItems = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo',
 'Roti','Daal','Paneer','Gobi aloo']
+breads = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer']
+southIndian = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal']
 frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','f15','f16']
 
 minifrm1 = Frame(mainfrm,relief=SUNKEN,border=5)
-
 count = 0
 for item in vegItems:
     frames[count] = Frame(minifrm1)
@@ -34,10 +36,6 @@ for item in vegItems:
 minifrm1.pack(side=LEFT,padx=5,pady=5,fill=Y)   
 
                     # frame for Indian breads column - minifrm2
-
-breads = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer']
-frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11']
-
 minifrm2 = Frame(mainfrm,relief=SUNKEN,border='5')
 
 count = 0
@@ -57,10 +55,6 @@ for item in breads:
     
 minifrm2.pack(padx=5,pady=5,anchor='n',side=LEFT)
 
-
-southIndian = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal']
-frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11']
-
 minifrm3 = Frame(mainfrm,relief=SUNKEN,border='5')
 count = 0
 for item in southIndian:
@@ -76,8 +70,17 @@ for item in southIndian:
     Entry(frames[count],textvariable=rvar,font='10',width='4').pack()
     frames[count].pack(padx=5,pady=2)
     count += 1
-
 minifrm3.pack(padx=5,pady=5,anchor='e')
 
-mainfrm.pack(pady=2,padx=1,fill=X,side=LEFT)
+mainfrm.pack(pady=2,padx=1)
+bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
+Button(bottomfrm,text='BACK', font='arial 20 bold', command=NONE).pack(padx=10,side=LEFT)
+Button(bottomfrm,text='SUBMIT ORDER', font='arial 20 bold', command=NONE).pack(padx=10,side=RIGHT)
+bottomfrm.pack(side=BOTTOM)
+rightfrm.pack(fill=X,side=LEFT,anchor='n')
+sidefrm = Frame(root,bg='red')
+var = StringVar()
+screen = Entry(sidefrm,textvariable=var, font='lucida 18 bold').pack(fill=Y,padx=5, pady='10')
+sidefrm.pack(pady=2,padx=1,side=RIGHT,anchor='n')
+
 root.mainloop()
