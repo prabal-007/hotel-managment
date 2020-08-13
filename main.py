@@ -7,8 +7,8 @@ root.configure(background='Gold')
 frm1 = Frame(bg='red')
 Label(frm1,text='Hotel Management SYSTEM', font='arial 25 bold', padx='15', pady='5', bg='gold', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
 frm1.pack(side=TOP, fill=X)
-
-# /////////////////////////////////////////////////////////////////////////////
+staVar=StringVar()
+# ////////////////////////////////////////////////// ///////////////////////////
 def vegZone():
         
     rightfrm = Frame(root,bg='gold')
@@ -23,7 +23,6 @@ def vegZone():
     breads = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer']
     southIndian = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal']
     frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','f15','f16']
-
 
     minifrm1 = Frame(mainfrm,relief=SUNKEN,border=5)
     count = 0
@@ -80,7 +79,7 @@ def vegZone():
 
     bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
     Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
-    Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=submitOrder).pack(padx=10,side=RIGHT)
+    submit = Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=submitOrder).pack(padx=10,side=RIGHT)
     Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
     bottomfrm.pack(side=BOTTOM)
     rightfrm.pack(fill=X,side=LEFT,anchor='n')
@@ -101,9 +100,13 @@ def vegZone():
     payfrm.pack(side=BOTTOM)
 
     sidefrm.pack(pady=2,padx=1,side=RIGHT,anchor='n')
+    value = staVar.get()
+    print(value)
+    # screen.insert(ACTIVE,)
 
 def submitOrder():
-    orderlis = stavar.get()
+    pass
     
+
 vegZone()
 root.mainloop()
