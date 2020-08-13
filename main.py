@@ -107,6 +107,5 @@ def vegZone():
 def submitOrder():
     pass
     
-
 vegZone()
 root.mainloop()
