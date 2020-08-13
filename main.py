@@ -80,7 +80,7 @@ def vegZone():
 
     bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
     Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
-    Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
+    Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=submitOrder).pack(padx=10,side=RIGHT)
     Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
     bottomfrm.pack(side=BOTTOM)
     rightfrm.pack(fill=X,side=LEFT,anchor='n')
@@ -102,5 +102,8 @@ def vegZone():
 
     sidefrm.pack(pady=2,padx=1,side=RIGHT,anchor='n')
 
+def submitOrder():
+    orderlis = stavar.get()
+    
 vegZone()
 root.mainloop()
