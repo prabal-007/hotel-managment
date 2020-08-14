@@ -9,7 +9,11 @@ Label(frm1,text='Hotel Management SYSTEM', font='arial 25 bold', padx='15', pady
 frm1.pack(side=TOP, fill=X)
 staVar=StringVar()
 # ////////////////////////////////////////////////// ///////////////////////////
-
+def submitOrder():
+    # result = zip(vegItems,breads)
+    # for i in set(result):
+    #     screen.insert(END,f'{i}\n')
+   
 rightfrm = Frame(root,bg='gold')
 mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
 Label(mainfrm,text='MENU',font='arial 20 bold',padx='5').pack()
@@ -78,7 +82,7 @@ mainfrm.pack(pady=2,padx=1)
 
 bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
 Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
-submit = Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=None).pack(padx=10,side=RIGHT)
+Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=submitOrder).pack(padx=10,side=RIGHT)
 Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
@@ -90,7 +94,7 @@ scroll = Scrollbar(sidefrm)
 scroll.pack(fill=Y,side=RIGHT,pady=10)
 var.set('Item  Qty  Price\n ')
 
-screen = Text(sidefrm, font='lucida 14 bold', yscrollcommand=scroll.set,state=DISABLED)
+screen = Text(sidefrm, font='lucida 14 bold', yscrollcommand=scroll.set)
 screen.pack(fill=Y,expand=TRUE, padx=5, pady='10')
 scroll.config(command=screen.yview)
 payfrm = Frame(sidefrm,relief=FLAT, border='8',background='red')
@@ -103,7 +107,5 @@ value = staVar.get()
 print(value)
     # screen.insert(ACTIVE,)
 
-def submitOrder():
-    pass
-    
+
 root.mainloop()
