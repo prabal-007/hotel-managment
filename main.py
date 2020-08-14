@@ -10,11 +10,14 @@ frm1.pack(side=TOP, fill=X)
 staVar=StringVar()
 # ////////////////////////////////////////////////// ///////////////////////////
 def submitOrder():
-    screen.reset()
+    screen.configure(state=NORMAL)
+    screen.delete('1.0', END)
+    screen.insert(END,f'Item\tQty\tPrice')
     result = zip(vegItems,breads)
     for i in set(result):
         screen.insert(END,f'{i}\n')
-        screen.configure(state=DISABLED)
+    screen.configure(state=DISABLED)
+
    
 rightfrm = Frame(root,bg='gold')
 mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
@@ -84,7 +87,7 @@ mainfrm.pack(pady=2,padx=1)
 
 bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
 Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
-Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=submitOrder).pack(padx=10,side=RIGHT)
+submit = Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKEN, command=submitOrder).pack(padx=10,side=RIGHT)
 Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
@@ -98,7 +101,8 @@ var.set('Item  Qty  Price\n ')
 
 screen = Text(sidefrm,font='lucida 14 bold', yscrollcommand=scroll.set)
 screen.pack(fill=Y,expand=TRUE, padx=5, pady='10')
-screen.insert(END,f'hello')
+screen.insert(END,f'\n\n\tPress\n       \'SUBMIT ORDER\'\n   to get order summery')
+screen.configure(state=DISABLED)
 scroll.config(command=screen.yview)
 payfrm = Frame(sidefrm,relief=FLAT, border='8',background='red')
 Button(payfrm,text='Pay Now', font='arial 15 bold',relief=SUNKEN, command=NONE,padx=5).pack(padx=10,pady=5)
