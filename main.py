@@ -114,5 +114,4 @@ value = staVar.get()
 print(value)
     # screen.insert(ACTIVE,)
 
-
 root.mainloop()
