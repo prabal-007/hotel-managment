@@ -1,5 +1,6 @@
+          # HOTEL MANAGEMENT SYSTEM
+    
 from tkinter import *
-
 root = Tk()
 root.title('Hotel Management')
 root.geometry('1000x800')
@@ -18,7 +19,6 @@ def submitOrder():
         screen.insert(END,f'{i}\n')
     screen.configure(state=DISABLED)
 
-   
 rightfrm = Frame(root,bg='gold')
 mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
 Label(mainfrm,text='MENU',font='arial 20 bold',padx='5').pack()
