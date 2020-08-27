@@ -84,7 +84,7 @@ for item in breads:
     Entry(frames[count],textvariable=rvar,font='10',width='4').pack()
     frames[count].pack(padx=5,pady=2)
     count += 1
-    var_i =+ 1
+    var_i += 1
 minifrm2.pack(padx=5,pady=5,anchor='n',side=LEFT)
 
 minifrm3 = Frame(mainfrm,relief=SUNKEN,border='5')
