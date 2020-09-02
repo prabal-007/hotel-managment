@@ -8,7 +8,7 @@ frm1 = Frame(bg='red')
 Label(frm1,text='Hotel Management SYSTEM', font='arial 25 bold', padx='15', pady='5', bg='gold', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
 frm1.pack(side=TOP, fill=X)
 staVar=StringVar()
-# ////////////////////////////////////////////////// ///////////////////////////
+# ////////////////////////////////////////////////// //////////////////////////
 def submitOrder():
     screen.configure(state=NORMAL)
     screen.delete('1.0', END)
@@ -117,6 +117,7 @@ Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
     # /////////////////////////////////////////////////////////////////////////
+    
 sidefrm = Frame(root,bg='red')
 Label(sidefrm,text='Order Details', font='arial 15 bold',width=8,padx=5).pack(padx=5,fill=X)
 var = StringVar()
