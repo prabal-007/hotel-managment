@@ -28,7 +28,7 @@ Label(mainfrm,text='MENU',font='arial 20 bold',padx='5').pack()
 # frame for Vegetarial items - minifrm1
 vegItems = {'Roti':1,'Daal':2,'Paneer':2,'Gobi aloo':3,'Palak Paneer':4,'Rajma':5,'mutter paneer':6,'Kaali daal':3,
 'Chole':7,'Daal-Palak':6,'Broccoli Paneer':8,'Pinto Posole':9,'Crispy Baked':4,'Seaweeds':6,'Nuts.Paneer':7,'Leafy Greens':2}
-breads = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer']
+breads = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer aloo']
 southIndian = ['Roti','Daal','Paneer','Gobi aloo','Roti','Daal','Paneer','Gobi aloo','Roti','Daal']
 frames = ['f1','f2','f3','f4','f5','f6','f7','f8','f9','f10','f11','f12','f13','f14','f15','f16']
 veg_vars = []
