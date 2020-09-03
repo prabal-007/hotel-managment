@@ -18,7 +18,6 @@ def submitOrder():
         screen.insert(END,f'{i}\n')
     screen.configure(state=DISABLED)
 
-   
 rightfrm = Frame(root,bg='gold')
 mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
 Label(mainfrm,text='MENU',font='arial 20 bold',padx='5').pack()
@@ -50,7 +49,6 @@ var_i=0
 
 for item, price in vegItems.items():
     frames[count] = Frame(minifrm1)
-
     if count == 0:
         Label(frames[count],text='VEGETARIAN',  bg='orange',font='arial 8 bold').pack(pady=2,fill=X)
     radio =Checkbutton(frames[count],text=item, variable=veg_vars[var_i],padx='5')
@@ -66,7 +64,7 @@ for item, price in vegItems.items():
     var_i += 1
 minifrm1.pack(side=LEFT,padx=5,pady=5,fill=Y)   
 
-                    # frame for Indian breads column - minifrm2
+                 # frame for Indian breads column - minifrm2
 minifrm2 = Frame(mainfrm,relief=SUNKEN,border='5')
 count = 0
 for item in breads:
