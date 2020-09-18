@@ -8,7 +8,7 @@ frm1 = Frame(bg='red')
 Label(frm1,text='Hotel Management SYSTEM', font='arial 25 bold', padx='15', pady='5', bg='gold', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
 frm1.pack(side=TOP, fill=X)
 staVar=StringVar()
-# ////////////////////////////////////////////////// //////////////////////////
+# ////////////////////////////////////////////////// ////////////////////////
 def submitOrder():
     screen.configure(state=NORMAL)
     screen.delete('1.0', END)
@@ -23,6 +23,7 @@ mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
 Label(mainfrm,text='MENU',font='arial 20 bold',padx='5').pack()
 # staVar=StringVar()
 # staVar.set('Roti')
+
 
 # frame for Vegetarial items - minifrm1
 vegItems = {'Roti':1,'Daal':2,'Paneer':2,'Gobi aloo':3,'Palak Paneer':4,'Rajma':5,'mutter paneer':6,'Kaali daal':3,
@@ -106,7 +107,7 @@ for item in southIndian:
 minifrm3.pack(padx=5,pady=5,anchor='e')
 
 mainfrm.pack(pady=2,padx=1)
-    # ///////////////////////////////////////////////////////////////////////////////
+    # /////////////////////////////////////////////////////////////////////////////
 
 bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
 Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
@@ -114,7 +115,7 @@ submit = Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKE
 Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
-    # /////////////////////////////////////////////////////////////////////////
+    # ////////////////////////////////////////////////////////////////////////////
     
 sidefrm = Frame(root,bg='red')
 Label(sidefrm,text='Order Details', font='arial 15 bold',width=8,padx=5).pack(padx=5,fill=X)
