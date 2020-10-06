@@ -17,7 +17,6 @@ def submitOrder():
     for i in set(result):
         screen.insert(END,f'{i}\n')
     screen.configure(state=DISABLED)
-
     
 rightfrm = Frame(root,bg='gold')
 mainfrm = Frame(rightfrm,relief=SUNKEN, border='8',background='red')
