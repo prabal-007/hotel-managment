@@ -1,6 +1,5 @@
 from tkinter import *
 
-
 root = Tk()
 root.title('Hotel Management')
 root.geometry('1030x800')
