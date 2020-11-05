@@ -114,7 +114,7 @@ submit = Button(bottomfrm,text='SUBMIT ORDER', font='arial 15 bold',relief=SUNKE
 Button(bottomfrm,text='RESET', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=RIGHT)
 bottomfrm.pack(side=BOTTOM)
 rightfrm.pack(fill=X,side=LEFT,anchor='n')
-    # ////////////////////////////////////////////////////////////////////////////
+    # ///////////////////////////////////////////////////////////////////////////
     
 sidefrm = Frame(root,bg='red')
 Label(sidefrm,text='Order Details', font='arial 15 bold',width=8,padx=5).pack(padx=5,fill=X)
