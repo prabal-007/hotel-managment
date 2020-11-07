@@ -8,7 +8,7 @@ frm1 = Frame(bg='red')
 Label(frm1,text='Hotel Management SYSTEM', font='arial 25 bold', padx='15', pady='5', bg='gold', relief=SUNKEN, border=4).pack(padx=10, pady=10, fill=X)
 frm1.pack(side=TOP, fill=X)
 staVar=StringVar()
-# ////////////////////////////////////////////////// ///////////////////////
+# ////////////////////////////////////////////////// /////////////////////
 def submitOrder():
     screen.configure(state=NORMAL)
     screen.delete('1.0', END)
