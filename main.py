@@ -106,7 +106,7 @@ for item in southIndian:
 minifrm3.pack(padx=5,pady=5,anchor='e')
 
 mainfrm.pack(pady=2,padx=1)
-    # /////////////////////////////////////////////////////////////////////////////
+    # ///////////////////////////////////////////////////////////////////////////
 
 bottomfrm = Frame(rightfrm,relief=FLAT, border='8',background='red')
 Button(bottomfrm,text='BACK', font='arial 15 bold',relief=SUNKEN, command=NONE).pack(padx=10,side=LEFT)
